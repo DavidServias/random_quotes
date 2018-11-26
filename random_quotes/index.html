@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+</head>
+
+<html>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <div id="app">
+        <h1 id="title">Random Quote Generator</h1>
+        <div id="sourceButtons">
+          <button v-for="source in sources" 
+                  :class="{active:source.isActive}" 
+                  @click="toggleSources(source)">{{source.title}}</button>
+        </div>
+        <div id="display">
+          <p id="quote">{{currentQuote}}</p>
+          <p id="attribution" v-show="attribution">--{{attribution}}</p>
+        </div>
+        <div id="btnRow">
+          <button @click="newQuote">New</button>
+          <button @click="share">Share to Facebook</button>
+        </div> 
+    </div>
+
+<script src="js/random_quotes.js"></script>
+
+</body>
+
+
+</html>
